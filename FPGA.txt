@@ -1,83 +1,83 @@
-library IEEE; 
-use IEEE.STD_LOGIC_1164.ALL; 
-  
-entity Project_2 is 
-  Port ( STB, CE, A0, RD, WR, RESET: in STD_LOGIC; 
-        Y1, Y2: inout STD_LOGIC; 
-        IBF, INTR: out STD_LOGIC; 
-        D: inout STD_LOGIC_VECTOR(7 downto 0); 
-        P: in STD_LOGIC_VECTOR(7 downto 0)); 
-end Project_2; 
-  
-architecture Behavioral of Project_2 is 
---signal QRD: STD_LOGIC; 
-signal DR: STD_LOGIC_VECTOR(7 downto 0); 
-signal CON_REG: STD_LOGIC_VECTOR(1 downto 0); 
-signal STAT_REG: STD_LOGIC_VECTOR(2 downto 0);  
-signal IBFS, INTRS: STD_LOGIC:= '0'; 
-begin 
-  
-         
-Y1 <= ((STB and Y2) or (STB and not (A0 or CE or RD or not CON_REG(0)))) and not RESET; 
-Y2 <= ((not STB and (A0 or CE or RD or not CON_REG(0))) or ( (A0 or CE or RD or not CON_REG(0)) and Y2)) and not RESET; 
-  
-IBFS <= ((STB and not (A0 or CE or RD or not CON_REG(0))) or (Y2) or (not STB and (A0 or CE or RD or not CON_REG(0)))) and not RESET; 
-INTRS <= (STB and (A0 or CE or RD or not CON_REG(0)) and Y2) and not RESET; 
-  
-INTR <= INTRS; 
-IBF <= IBFS; 
-STAT_REG(0) <= IBFS; 
-STAT_REG(1) <= CON_REG(1) and not RESET; 
-STAT_REG(2) <= INTRS; 
-  
-process(A0, CE, RD, WR, RESET, P, D, CON_REG(1), STB)  
-begin 
-  
-    if(RESET = '1') then 
-     
-        CON_REG(0) <= '0'; 
-        CON_REG(1) <= '1'; 
-        D <= "00000000"; 
-         
-    elsif (A0 = '0' and CE = '0') then 
-     
-        if(RD = '0') then 
-            if(CON_REG(0) = '0') then 
-                D <= P; 
-            else 
-                D <= DR; 
-            end if; 
-        else 
-            D <= "ZZZZZZZZ"; 
-        end if; 
-  
-    elsif (A0 = '1' and CE = '0') then 
-     
-        if(WR = '0') then 
-            CON_REG(0) <= D(0); 
-            CON_REG(1) <= D(1); 
-        elsif(RD = '0') then 
-            D(0) <= STAT_REG(0); 
-            D(1) <= STAT_REG(1); 
-            D(2) <= STAT_REG(2); 
-            D(7 downto 3) <= "00000"; 
-        else 
-            D <= "ZZZZZZZZ"; 
-        end if; 
-     
-    else 
-        D <= "ZZZZZZZZ"; 
-  
-    end if; 
-end process; 
-  
---store data in DR when STB goes low 
-store_DR: process 
-begin 
-  
-wait until(STB'EVENT and STB = '0' and CE = '0'); 
-    DR <= P; 
-  
-end process store_DR; 
-end Behavioral; 
+library IEEE; Â 
+use IEEE.STD_LOGIC_1164.ALL;Â 
+Â Â 
+entity Project_2 isÂ 
+Â  PortÂ ( STB, CE, A0, RD, WR, RESET: in STD_LOGIC;Â 
+Â Â Â Â Â Â Â  Y1, Y2:Â inoutÂ STD_LOGIC;Â 
+Â Â Â Â Â Â Â  IBF, INTR: out STD_LOGIC;Â 
+Â Â Â Â Â Â Â  D:Â inoutÂ STD_LOGIC_VECTOR(7Â downtoÂ 0);Â 
+Â Â Â Â Â Â Â  P: in STD_LOGIC_VECTOR(7Â downtoÂ 0));Â 
+end Project_2;Â 
+Â Â 
+architecture Behavioral of Project_2 isÂ 
+--signal QRD: STD_LOGIC;Â 
+signal DR: STD_LOGIC_VECTOR(7Â downtoÂ 0);Â 
+signal CON_REG: STD_LOGIC_VECTOR(1Â downtoÂ 0);Â 
+signal STAT_REG: STD_LOGIC_VECTOR(2Â downtoÂ 0);Â Â 
+signal IBFS, INTRS: STD_LOGIC:=Â '0';Â 
+beginÂ 
+Â Â 
+Â Â Â Â Â Â Â Â Â 
+Y1 <= ((STB and Y2) or (STB and not (A0 or CE or RD or not CON_REG(0)))) and not RESET;Â 
+Y2 <= ((not STB and (A0 or CE or RD or not CON_REG(0))) or ( (A0 or CE or RD or not CON_REG(0)) and Y2)) and not RESET;Â 
+Â Â 
+IBFS <= ((STB and not (A0 or CE or RD or not CON_REG(0))) or (Y2) or (not STB and (A0 or CE or RD or not CON_REG(0)))) and not RESET;Â 
+INTRS <= (STB and (A0 or CE or RD or not CON_REG(0)) and Y2) and not RESET;Â 
+Â Â 
+INTR <= INTRS;Â 
+IBF <= IBFS;Â 
+STAT_REG(0) <= IBFS;Â 
+STAT_REG(1) <= CON_REG(1) and not RESET;Â 
+STAT_REG(2) <= INTRS;Â 
+Â Â 
+process(A0, CE, RD, WR, RESET, P, D, CON_REG(1), STB)Â Â 
+beginÂ 
+Â Â 
+Â Â Â Â if(RESET = '1') thenÂ 
+Â Â Â Â Â 
+Â Â Â Â Â Â Â  CON_REG(0) <= '0';Â 
+Â Â Â Â Â Â Â  CON_REG(1) <= '1';Â 
+Â Â Â Â Â Â Â  D <= "00000000";Â 
+Â Â Â Â Â Â Â Â Â 
+Â Â Â Â elsifÂ (A0 = '0' and CE = '0') thenÂ 
+Â Â Â Â Â 
+Â Â Â Â Â Â Â Â if(RD = '0') thenÂ 
+Â Â Â Â Â Â Â Â Â Â Â  if(CON_REG(0) = '0') thenÂ 
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  D <= P;Â 
+Â Â Â Â Â Â Â Â Â Â Â  elseÂ 
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  D <= DR;Â 
+Â Â Â Â Â Â Â Â Â Â Â  end if;Â 
+Â Â Â Â Â Â Â  elseÂ 
+Â Â Â Â Â Â Â Â Â Â Â  D <= "ZZZZZZZZ";Â 
+Â Â Â Â Â Â Â  end if;Â 
+Â Â 
+Â Â Â Â elsifÂ (A0 = '1' and CE = '0') thenÂ 
+Â Â Â Â Â 
+Â Â Â Â Â Â Â Â if(WR = '0') thenÂ 
+Â Â Â Â Â Â Â Â Â Â Â  CON_REG(0) <= D(0);Â 
+Â Â Â Â Â Â Â Â Â Â Â  CON_REG(1) <= D(1);Â 
+Â Â Â Â Â Â Â Â elsif(RD = '0') thenÂ 
+Â Â Â Â Â Â Â Â Â Â Â Â D(0) <= STAT_REG(0);Â 
+Â Â Â Â Â Â Â Â Â Â Â Â D(1) <= STAT_REG(1);Â 
+Â Â Â Â Â Â Â Â Â Â Â Â D(2) <= STAT_REG(2);Â 
+Â Â Â Â Â Â Â Â Â Â Â Â D(7Â downtoÂ 3) <= "00000";Â 
+Â Â Â Â Â Â Â  elseÂ 
+Â Â Â Â Â Â Â Â Â Â Â  D <= "ZZZZZZZZ";Â 
+Â Â Â Â Â Â Â  end if;Â 
+Â Â Â Â Â 
+Â Â Â  elseÂ 
+Â Â Â Â Â Â Â  D <= "ZZZZZZZZ";Â 
+Â Â 
+Â Â Â  end if;Â 
+end process;Â 
+Â Â 
+--store data in DR when STB goes lowÂ 
+store_DR: processÂ 
+beginÂ 
+Â Â 
+waitÂ until(STB'EVENT and STB = '0' and CE = '0');Â 
+Â Â Â  DR <= P;Â 
+Â Â 
+end processÂ store_DR;Â 
+end Behavioral;Â 
 
