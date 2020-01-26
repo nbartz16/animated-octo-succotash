@@ -1,0 +1,245 @@
+﻿+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------+----------------------+--------------------+
+| Trigger      | Event  | Table    | Statement                                                                                                                                                                                    | Timing | Created                | sql_mode                                                                                                                                  | Definer        | character_set_client | collation_connection | Database Collation |
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------+----------------------+--------------------+
+| personalcopy | INSERT | personal | insert into owned values(new.name,new.manacost,new.expansion,new.type,new.subtype,new.supertype,new.coloridentity,new.number,new.cardcolor) on duplicate key update number=number+new.number | BEFORE | 2019-11-26 09:18:36.51 | ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION | root@localhost | utf8                 | utf8_general_ci      | latin1_swedish_ci  |
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------+----------------------+--------------------+
++--------------------+
+| Tables_in_mtgcards |
++--------------------+
+| decks              |
+| owned              |
+| personal           |
+| wantedcards        |
++--------------------+
+
++---------------+-----------+
+| deckname      | format    |
++---------------+-----------+
+| 8 Rack        | Modern    |
+| Amulet Titan  | Modern    |
+| Rally Zombies | Modern    |
+| Syr Konrad    | Commander |
+| Yennett       | Commander |
++---------------+-----------+
+
+
+
+
+
+
++-----------------------------+----------+-----------+----------------------+------------------------+-----------+---------------+--------+-----------+
+| name                        | manacost | expansion | type                 | subtype                | supertype | coloridentity | number | cardcolor |
++-----------------------------+----------+-----------+----------------------+------------------------+-----------+---------------+--------+-----------+
+| Amulet of Vigor             | 1        | WWK       | Artifact             | N/A                    | N/A       | C             |      4 | C         |
+| Anguished Unmaking          | 1WB      | SOI       | Instant              | N/A                    | N/A       | WB            |      1 | WB        |
+| Azusa, Lost but Seeking     | 2G       | M25       | Creature             | Human Monk             | Legendary | G             |      4 | G         |
+| Balefire Dragon             | 5RR      | UMA       | Creature             | N/A                    | Dragon    | R             |      1 | R         |
+| Basara Tower Archer         | GG       | JOU       | Creature             | Human Archer           | N/A       | G             |      1 | G         |
+| Battlewise Hoplite          | WU       | THS       | Creature             | Human Soldier          | N/A       | WU            |      1 | WU        |
+| Beast Within                | 2G       | CN2       | Instant              | N/A                    | N/A       | G             |      1 | G         |
+| Blood Crypt                 | 0        | GRN       | Land                 | Swamp Mountain         | N/A       | BR            |      1 | C         |
+| Bloodstained Mire           | 0        | KTK       | Land                 | N/A                    | N/A       | BR            |      1 | C         |
+| Blooming Marsh              | 0        | KLD       | Land                 | N/A                    | N/A       | BG            |      1 | C         |
+| Boil                        | 3R       | MPS       | Instant              | N/A                    | N/A       | R             |      1 | R         |
+| Bojuka Bog                  | 0        | WWK       | Land                 | N/A                    | N/A       | B             |      1 | C         |
+| Boneyard Parley             | 5BB      | XLN       | Sorcery              | N/A                    | N/A       | B             |      1 | B         |
+| Bonfire of the Damned       | XRR      | MM3       | Sorcery              | N/A                    | N/A       | R             |      2 | R         |
+| Boros Charm                 | WR       | GTC       | Instant              | N/A                    | N/A       | WR            |      1 | WR        |
+| Boros Garrison              | 0        | RAV       | Land                 | N/A                    | N/A       | WR            |      1 | C         |
+| Botanical Sanctum           | 0        | KLD       | Land                 | N/A                    | N/A       | UG            |      1 | C         |
+| Bow of Nylea                | 1GG      | THS       | Artifact Enchantment | N/A                    | Legendary | G             |      1 | G         |
+| Brass's Bounty              | 6R       | RIX       | Sorcery              | N/A                    | N/A       | R             |      1 | R         |
+| Carrion Feeder              | B        | MH1       | Creature             | Zombie                 | N/A       | B             |      3 | B         |
+| Cathartic Reunion           | 1R       | KLD       | Sorcery              | N/A                    | N/A       | R             |      1 | R         |
+| Champion of the Parish      | W        | ISD       | Creature             | Human                  | N/A       | W             |      1 | W         |
+| Chandra's Phoenix           | 1RR      | M14       | Creature             | Phoenix                | N/A       | R             |      1 | R         |
+| Chandra, Acolyte of Flame   | 1RR      | M20       | Planeswalker         | Chandra                | Legendary | R             |      1 | R         |
+| Concealed Courtyard         | 0        | KLD       | Land                 | N/A                    | N/A       | WB            |      4 | C         |
+| Crow Storm                  | 2U       | UNS       | Sorcery              | N/A                    | N/A       | U             |      1 | U         |
+| Cyclonic Rift               | 1U       | MM3       | Instant              | N/A                    | N/A       | U             |      1 | U         |
+| Damnation                   | 2BB      | MM3       | Sorcery              | N/A                    | N/A       | B             |      1 | B         |
+| Duskwatch Recruiter         | 1G       | SOI       | Creature             | Human Warrior Werewolf | N/A       | G             |      1 | G         |
+| Elvish Clancaller           | GG       | M19       | Creature             | Elf Druid              | N/A       | G             |      1 | G         |
+| Embereth Shieldbreaker      | 1R       | ELD       | Creature             | Human Knight           | N/A       | R             |      1 | R         |
+| Engineered Explosives       | X        | UMA       | Artifact             | N/A                    | N/A       | C             |      2 | C         |
+| Enigma Sphinx               | 4WUB     | C18       | Artifact Creature    | Sphinx                 | N/A       | WUB           |      1 | WUB       |
+| Epic Experiment             | XUR      | RTR       | Sorcery              | N/A                    | N/A       | UR            |      1 | UR        |
+| Faithless Looting           | R        | UMA       | Sorcery              | N/A                    | N/A       | R             |      1 | R         |
+| Field of the Dead           | 0        | M20       | Land                 | N/A                    | N/A       | C             |      1 | C         |
+| Firespout                   | 2{R/G}   | SHM       | Sorcery              | N/A                    | N/A       | RG            |      1 | RG        |
+| Game Trail                  | 0        | SOI       | Land                 | N/A                    | N/A       | RG            |      1 | C         |
+| Garruk, Cursed Huntsman     | 4BG      | ELD       | Planeswalker         | Garruk                 | Legendary | GB            |      1 | GB        |
+| Gemhide Sliver              | 1G       | TSP       | Creature             | Sliver                 | N/A       | G             |      1 | G         |
+| Ghalta, Primal Hunger       | 10GG     | RIX       | Creature             | Elder Dinosaur         | Legendary | G             |      1 | G         |
+| Gideon Blackblade           | 1WW      | WAR       | Planeswalker         | Gideon                 | Legendary | W             |      1 | W         |
+| Gideon of the Trials        | 1WW      | AKH       | Planeswalker         | Gideon                 | Legendary | W             |      1 | W         |
+| Glacial Fortress            | 0        | XLN       | Land                 | N/A                    | N/A       | WU            |      3 | C         |
+| Glen Elendra Archmage       | 3U       | UMA       | Creature             | Faerie Wizard          | N/A       | U             |      1 | U         |
+| Golos, Tireless Pilgrim     | 5        | M20       | Creature             | Construct              | Legendary | WUBRG         |      1 | C         |
+| Gravedigger                 | 3B       | M20       | Creature             | Zombie                 | N/A       | B             |      2 | B         |
+| Hallowed Fountain           | 0        | RNA       | Land                 | Plains Island          | N/A       | WU            |      1 | C         |
+| Hallowed Fountain           | 0        | RTR       | Land                 | Plains Island          | N/A       | WU            |      1 | C         |
+| Hammer of Purphoros         | 1RR      | THS       | Artifact Enchantment | N/A                    | Legendary | R             |      1 | R         |
+| Hanweir Garrison            | 2R       | EMN       | Creature             | Human Soldier          | N/A       | R             |      1 | R         |
+| Hinterland Harbor           | 0        | DOM       | Land                 | N/A                    | N/A       | UG            |      1 | C         |
+| Hornet Queen                | 4GGG     | M15       | Creature             | Insect                 | N/A       | G             |      1 | G         |
+| Hot Fix                     | 4WU      | UNS       | Sorcery              | N/A                    | N/A       | WU            |      1 | WU        |
+| Hour of Promise             | 4G       | HOU       | Sorcery              | N/A                    | N/A       | G             |      1 | G         |
+| Hythonia the Cruel          | 4BB      | THS       | Creature             | Gorgon                 | Legendary | B             |      1 | B         |
+| Inquisition of Kozilek      | B        | MM3       | Sorcery              | N/A                    | N/A       | B             |      4 | B         |
+| Inquisition of Kozilek      | B        | ROE       | Sorcery              | N/A                    | N/A       | B             |      3 | B         |
+| Inspiring Vantage           | 0        | KLD       | Land                 | N/A                    | N/A       | WR            |      1 | C         |
+| Jadelight Ranger            | 1GG      | RIX       | Creature             | Merfolk Scout          | N/A       | G             |      1 | G         |
+| Khalni Garden               | 0        | WWK       | Land                 | N/A                    | N/A       | G             |      1 | C         |
+| Kozilek's Return            | 2R       | OGW       | Instant              | N/A                    | N/A       | R             |      1 | C         |
+| Lead the Stampede           | 2G       | MBS       | Sorcery              | N/A                    | N/A       | G             |      1 | G         |
+| Leatherback Baloth          | GGG      | WWK       | Creature             | Beast                  | N/A       | G             |      1 | G         |
+| Leyline of Anticipation     | 2UU      | M20       | Enchantment          | N/A                    | N/A       | U             |      1 | U         |
+| Lighning Helix              | WR       | IMA       | Instant              | N/A                    | N/A       | WR            |      1 | WR        |
+| Lightning Bolt              | R        | MFP       | Instant              | N/A                    | N/A       | R             |      1 | R         |
+| Llanowar Elves              | G        | DOM       | Creature             | Elf Druid              | N/A       | G             |      1 | G         |
+| Magus of the Moon           | 2R       | IMA       | Creature             | Human Wizard           | N/A       | R             |      1 | R         |
+| Manaweft Sliver             | 1G       | TSP       | Creature             | Sliver                 | N/A       | G             |      1 | G         |
+| Memnite                     | 0        | SOM       | Artifact Creature    | Construct              | N/A       | C             |      1 | C         |
+| Midnight Clock              | 2U       | ELD       | Artifact             | N/A                    | N/A       | U             |      1 | U         |
+| Mortify                     | 1WB      | RNA       | Instant              | N/A                    | N/A       | WB            |      1 | WB        |
+| Mulldrifter                 | 4U       | C18       | Creature             | Elemental              | N/A       | U             |      1 | U         |
+| Multani, Yavimaya's Avatar  | 4GG      | DOM       | Creature             | Elemental Avatar       | Legendary | G             |      1 | G         |
+| Mutavault                   | 0        | M14       | Land                 | N/A                    | N/A       | C             |      4 | C         |
+| Mwonvuli Acid-Moss          | 2GG      | TSP       | Sorcery              | N/A                    | N/A       | G             |      1 | G         |
+| Night Incarnate             | 4B       | C18       | Creature             | Elemental              | N/A       | B             |      1 | B         |
+| Oddly Uneven                | 3WW      | UNS       | Sorcery              | N/A                    | N/A       | W             |      1 | W         |
+| Oko, Thief of Crowns        | 1UG      | ELD       | Planeswalker         | Oko                    | Legendary | UG            |      1 | UG        |
+| Pact of Negation            | 0        | M25       | Instant              | N/A                    | N/A       | U             |      1 | U         |
+| Palladia-Mors, the Ruiner   | 3WRG     | M19       | Creature             | Elder Dragon           | Legendary | WRG           |      1 | WRG       |
+| Phalanx Leader              | WW       | THS       | Creature             | Human Soldier          | N/A       | W             |      2 | W         |
+| Platinum Emperion           | 8        | SOM       | Artifact Creature    | Golem                  | N/A       | C             |      1 | C         |
+| Polluted Delta              | 0        | KTK       | Land                 | N/A                    | N/A       | UB            |      1 | C         |
+| Purphoros, God of the Forge | 3R       | THS       | Enchantment Creature | God                    | Legendary | R             |      1 | R         |
+| Radiant Fountain            | 0        | IMA       | Land                 | N/A                    | N/A       | C             |      1 | C         |
+| Rally the Ancestors         | XWW      | FRF       | Instant              | N/A                    | N/A       | W             |      4 | W         |
+| Ramunap Excavator           | 2G       | HOU       | Creature             | Naga Cleric            | N/A       | G             |      3 | G         |
+| Razaketh the Foulblooded    | 5BBB     | HOU       | Creature             | Demon                  | Legendary | B             |      1 | B         |
+| Realm-Cloaked Giant         | 5WW      | ELD       | Creature             | Giant                  | N/A       | W             |      1 | W         |
+| Reckless Bushwhacker        | 2R       | OGW       | Creature             | Goblin Warrior Ally    | N/A       | R             |      1 | R         |
+| Rhonas the Indomitable      | 2G       | AKH       | Creature             | God                    | Legendary | G             |      1 | G         |
+| Ryusei, the Falling Star    | 5R       | IMA       | Creature             | Dragon Spirit          | Legendary | R             |      1 | R         |
+| Sacred Foundry              | 0        | GRN       | Land                 | Plains Mountain        | N/A       | WR            |      5 | C         |
+| Scheming Symmetry           | B        | M20       | Sorcery              | N/A                    | N/A       | B             |      1 | B         |
+| Selesnya Sanctuary          | 0        | RAV       | Land                 | N/A                    | N/A       | WG            |      1 | C         |
+| Selvala's Stampede          | 4GG      | CNS       | Sorcery              | N/A                    | N/A       | G             |      1 | G         |
+| Serra Avatar                | 4WWW     | C18       | Creature             | Avatar                 | N/A       | W             |      1 | W         |
+| Serum Visions               | U        | MM3       | Sorcery              | N/A                    | N/A       | U             |      3 | U         |
+| Shriekmaw                   | 4B       | UMA       | Creature             | Elemental              | N/A       | B             |      1 | B         |
+| Signal Pest                 | 1        | SOM       | Artifact Creature    | Pest                   | N/A       | C             |      1 | C         |
+| Soul-Scar Mage              | R        | AKH       | Creature             | Human Wizard           | N/A       | R             |      1 | R         |
+| Sower of Temptation         | 2UU      | BBD       | Creature             | Faerie Wizard          | N/A       | U             |      1 | U         |
+| Spell Suck                  | 2UU      | UNS       | Instant              | N/A                    | N/A       | U             |      1 | U         |
+| Sphinx of the Final Word    | 5UU      | OGW       | Creature             | Sphinx                 | N/A       | U             |      1 | U         |
+| Sphinx of Ulthuun           | 5UU      | C18       | Creature             | Sphinx                 | N/A       | U             |      1 | U         |
+| Spirebluff Canal            | 0        | KLD       | Land                 | N/A                    | N/A       | UR            |      1 | C         |
+| Steam Vents                 | 0        | GRN       | Land                 | Island Mountain        | N/A       | UR            |      4 | c         |
+| Steel Leaf Champion         | GGG      | DOM       | Creature             | Elf Knight             | N/A       | G             |      4 | G         |
+| Steel Overseer              | 2        | M20       | Artifact Creature    | Construct              | N/A       | C             |      2 | C         |
+| Stomping Grounds            | 0        | RNA       | Land                 | Mountain Forest        | N/A       | RG            |      2 | C         |
+| Summoner's Pact             | 0        | M25       | Instant              | N/A                    | N/A       | G             |      4 | G         |
+| The Brute                   | RRR      | LEG       | Enchantment          | Aura                   | N/A       | R             |      1 | R         |
+| Thoughtseize                | B        | IMA       | Sorcery              | N/A                    | N/A       | B             |      1 | B         |
+| Thoughtseize                | B        | THS       | Sorcery              | N/A                    | N/A       | B             |      2 | B         |
+| Thrasing Brontodon          | 1GG      | RIX       | Creature             | Dinosaur               | N/A       | G             |      3 | G         |
+| Tireless Tracker            | 2G       | SOI       | Creature             | Human Scout            | N/A       | G             |      1 | G         |
+| Undead Augur                | BB       | MH1       | Creature             | Zombie Wizard          | N/A       | B             |      3 | B         |
+| Urborg                      | 0        | LEG       | Land                 | Legendary              | N/A       | B             |      1 | C         |
+| Urborg, Tomb of Yawgmoth    | 0        | M15       | Land                 | Legendary              | N/A       | C             |      4 | C         |
+| Urborg, Tomb of Yawgmoth    | 0        | UMA       | Land                 | N/A                    | Legendary | C             |      2 | C         |
+| Utopia Sprawl               | G        | M25       | Enchantment          | Aura                   | N/A       | G             |      1 | G         |
+| Verdant Catacombs           | 0        | ZEN       | Land                 | N/A                    | N/A       | BG            |      1 | C         |
+| Veteran Explorer            | G        | BBD       | Creature             | Human Soldier Scout    | N/A       | G             |      1 | G         |
+| Vivien Reid                 | 3GG      | M19       | Planeswalker         | Vivien                 | Legendary | G             |      1 | G         |
+| Waker of the Wilds          | 2GG      | XLN       | Creature             | Merfolk Shaman         | N/A       | G             |      1 | G         |
+| Walking Ballista            | XX       | KLD       | Artifact Creature    | Construct              | N/A       | C             |      1 | C         |
+| Watery Grave                | 0        | GRN       | Land                 | Island Swamp           | N/A       | UB            |      3 | C         |
+| Wear // Tear                | 1WR      | DGM       | Instant // Instant   | N/A                    | N/A       | WR            |      1 | WR        |
+| Windreader Sphinx           | 5UU      | M14       | Creature             | Sphinx                 | N/A       | U             |      1 | U         |
+| Young Pyromancer            | 1R       | M14       | Creature             | Human Shaman           | N/A       | R             |      4 | R         |
++-----------------------------+----------+-----------+----------------------+------------------------+-----------+---------------+--------+-----------+
+
++--------------------------+----------+-----------+-------------------+-----------------+-----------+---------------+--------+-----------+---------------+
+| name                     | manacost | expansion | type              | subtype         | supertype | coloridentity | number | cardcolor | deck          |
++--------------------------+----------+-----------+-------------------+-----------------+-----------+---------------+--------+-----------+---------------+
+| Steam Vents              | 0        | GRN       | Land              | Island Mountain | N/A       | UR            |      4 | c         | None          |
+| Serum Visions            | U        | MM3       | Sorcery           | N/A             | N/A       | U             |      3 | U         | None          |
+| Inquisition of Kozilek   | B        | MM3       | Sorcery           | N/A             | N/A       | B             |      4 | B         | 8 Rack        |
+| Mutavault                | 0        | M14       | Land              | N/A             | N/A       | C             |      4 | C         | 8 Rack        |
+| Glacial Fortress         | 0        | XLN       | Land              | N/A             | N/A       | WU            |      2 | C         | None          |
+| Concealed Courtyard      | 0        | KLD       | Land              | N/A             | N/A       | WB            |      4 | C         | 8 Rack        |
+| Botanical Sanctum        | 0        | KLD       | Land              | N/A             | N/A       | UG            |      1 | C         | None          |
+| Blooming Marsh           | 0        | KLD       | Land              | N/A             | N/A       | BG            |      1 | C         | None          |
+| Inspiring Vantage        | 0        | KLD       | Land              | N/A             | N/A       | WR            |      1 | C         | None          |
+| Spirebluff Canal         | 0        | KLD       | Land              | N/A             | N/A       | UR            |      1 | C         | None          |
+| Verdant Catacombs        | 0        | ZEN       | Land              | N/A             | N/A       | BG            |      1 | C         | 8 Rack        |
+| Polluted Delta           | 0        | KTK       | Land              | N/A             | N/A       | UB            |      1 | C         | Yennett       |
+| Bloodstained Mire        | 0        | KTK       | Land              | N/A             | N/A       | BR            |      1 | C         | 8 Rack        |
+| Game Trail               | 0        | SOI       | Land              | N/A             | N/A       | RG            |      1 | C         | None          |
+| Rally the Ancestors      | XWW      | FRF       | Instant           | N/A             | N/A       | W             |      4 | W         | Rally Zombies |
+| Stomping Grounds         | 0        | RNA       | Land              | Mountain Forest | N/A       | RG            |      2 | C         | None          |
+| Watery Grave             | 0        | GRN       | Land              | Island Swamp    | N/A       | UB            |      3 | C         | None          |
+| Battlewise Hoplite       | WU       | THS       | Creature          | Human Soldier   | N/A       | WU            |      1 | WU        | None          |
+| Phalanx Leader           | WW       | THS       | Creature          | Human Soldier   | N/A       | W             |      2 | W         | None          |
+| Hallowed Fountain        | 0        | RTR       | Land              | Plains Island   | N/A       | WU            |      1 | C         | Yennett       |
+| Hallowed Fountain        | 0        | RNA       | Land              | Plains Island   | N/A       | WU            |      1 | C         | None          |
+| Urborg                   | 0        | LEG       | Land              | N/A             | Legendary | B             |      1 | C         | Yennett       |
+| Urborg, Tomb of Yawgmoth | 0        | M15       | Land              | N/A             | Legendary | C             |      4 | C         | 8 Rack        |
+| Urborg, Tomb of Yawgmoth | 0        | UMA       | Land              | N/A             | Legendary | C             |      1 | C         | Yennett       |
+| Boros Garrison           | 0        | RAV       | Land              | N/A             | N/A       | WR            |      1 | C         | Amulet Titan  |
+| Selesnya Sanctuary       | 0        | RAV       | Land              | N/A             | N/A       | WG            |      1 | C         | Amulet Titan  |
+| Leyline of Anticipation  | 2UU      | M20       | Enchantment       | N/A             | N/A       | U             |      1 | U         | Yennett       |
+| Anguished Unmaking       | 1WB      | SOI       | Instant           | N/A             | N/A       | WB            |      1 | WB        | Yennett       |
+| Mortify                  | 1WB      | RNA       | Instant           | N/A             | N/A       | WB            |      1 | WB        | Yennett       |
+| Scheming Symmetry        | B        | M20       | Sorcery           | N/A             | N/A       | B             |      1 | B         | Yennett       |
+| Carrion Feeder           | B        | MH1       | Creature          | Zombie          | N/A       | B             |      3 | B         | Rally Zombies |
+| Undead Augur             | BB       | MH1       | Creature          | Zombie Wizard   | N/A       | B             |      3 | B         | Rally Zombies |
+| Damnation                | 2BB      | MM3       | Sorcery           | N/A             | N/A       | B             |      1 | B         | Yennett       |
+| Cyclonic Rift            | 1U       | MM3       | Instant           | N/A             | N/A       | U             |      1 | U         | Yennett       |
+| Windreader Sphinx        | 5UU      | M14       | Creature          | Sphinx          | N/A       | U             |      1 | U         | Yennett       |
+| Enigma Sphinx            | 4WUB     | C18       | Artifact Creature | Sphinx          | N/A       | WUB           |      1 | WUB       | Amulet Titan  |
+| Sphinx of the Final Word | 5UU      | OGW       | Creature          | Sphinx          | N/A       | U             |      1 | U         | Yennett       |
+| Sphinx of Ulthuun        | 5UU      | C18       | Creature          | Sphinx          | N/A       | U             |      1 | U         | Yennett       |
+| Mulldrifter              | 4U       | C18       | Creature          | Elemental       | N/A       | U             |      1 | U         | Yennett       |
+| Shriekmaw                | 4B       | UMA       | Creature          | Elemental       | N/A       | B             |      1 | B         | Yennett       |
+| Night Incarnate          | 4B       | C18       | Creature          | Elemental       | N/A       | B             |      1 | B         | Yennett       |
+| Sower of Temptation      | 2UU      | BBD       | Creature          | Faerie Wizard   | N/A       | U             |      1 | U         | Yennett       |
+| Glen Elendra Archmage    | 3U       | UMA       | Creature          | Faerie Wizard   | N/A       | U             |      1 | U         | Yennett       |
+| Serra Avatar             | 4WWW     | C18       | Creature          | Avatar          | N/A       | W             |      1 | W         | Yennett       |
+| Blood Crypt              | 0        | GRN       | Land              | Swamp Mountain  | N/A       | BR            |      1 | C         | None          |
+| Azusa, Lost but Seeking  | 2G       | M25       | Creature          | Human Monk      | Legendary | G             |      4 | G         | Amulet Titan  |
+| Summoner's Pact          | 0        | M25       | Instant           | N/A             | N/A       | G             |      4 | G         | Amulet Titan  |
+| Pact of Negation         | 0        | M25       | Instant           | N/A             | N/A       | U             |      1 | U         | Amulet Titan  |
+| Engineered Explosives    | X        | UMA       | Artifact          | N/A             | N/A       | C             |      2 | C         | Amulet Titan  |
+| Hornet Queen             | 4GGG     | M15       | Creature          | Insect          | N/A       | G             |      1 | G         | Amulet Titan  |
+| Walking Ballista         | XX       | KLD       | Artifact Creature | Construct       | N/A       | C             |      1 | C         | Amulet Titan  |
+| Amulet of Vigor          | 1        | WWK       | Artifact          | N/A             | N/A       | C             |      4 | C         | Amulet Titan  |
+| Field of the Dead        | 0        | M20       | Land              | N/A             | N/A       | C             |      1 | C         | Amulet Titan  |
+| Bojuka Bog               | 0        | WWK       | Land              | N/A             | N/A       | B             |      1 | C         | Amulet Titan  |
+| Khalni Garden            | 0        | WWK       | Land              | N/A             | N/A       | G             |      1 | C         | Amulet Titan  |
+| Radiant Fountain         | 0        | IMA       | Land              | N/A             | N/A       | C             |      1 | C         | Amulet Titan  |
+| The Brute                | RRR      | LEG       | Enchantment       | Aura            | N/A       | R             |      1 | R         | None          |
+| Kozilek's Return         | 2R       | OGW       | Instant           | N/A             | N/A       | R             |      1 | C         | Amulet Titan  |
+| Firespout                | 2{R/G}   | SHM       | Sorcery           | N/A             | N/A       | RG            |      1 | RG        | Amulet Titan  |
+| Boneyard Parley          | 5BB      | XLN       | Sorcery           | N/A             | N/A       | B             |      1 | B         | Yennett       |
+| Thoughtseize             | B        | THS       | Sorcery           | N/A             | N/A       | B             |      2 | B         | 8 Rack        |
+| Thoughtseize             | B        | IMA       | Sorcery           | N/A             | N/A       | B             |      1 | B         | 8 Rack        |
+| Basara Tower Archer      | GG       | JOU       | Creature          | Human Archer    | N/A       | G             |      1 | G         | None          |
++--------------------------+----------+-----------+-------------------+-----------------+-----------+---------------+--------+-----------+---------------+
+
+
+
+
++---------------------+--------------+--------+
+| name                | deck         | number |
++---------------------+--------------+--------+
+| Blatant Thievery    | Yennett      |      1 |
+| Breeding Pool       | Amulet Titan |      2 |
+| Liliana of the Veil | 8 Rack       |      4 |
+| Once Upon a Time    | Amulet Titan |      4 |
++---------------------+--------------+--------+
