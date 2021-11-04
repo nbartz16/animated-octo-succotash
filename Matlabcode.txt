@@ -1,0 +1,91 @@
+format longG
+dataOne = zeros(1,301); % Used to hold the output data from the scales
+dataTwo = zeros(1,301);
+dataThree = zeros(1,301);
+time = zeros(1,301); % Used to hold the times at which measurements were taken
+initialMass = zeros(3,1); % Used to hold the initial masses of the sands
+current = zeros(1,1); % Used to hold the current time
+start = zeros(1,1); % Used to hold the initial time
+arduino=serialport("COM3",57600); % Configures a serial port to 
+                                  % communicate with the Arduino. Make sure
+                                  % that the COM port is set properly
+configureTerminator(arduino,"CR"); % Sets the communication mode with the
+                                   % Arduino
+userInput = 'p';
+% 
+while userInput~='q'
+    userInput = input('Input r to raise the linear actuator, l to lower it, or q to continue to weighing the masses');
+    if userInput=='r' % Checks the user input
+        write(arduino,'r\n',"char"); % Writes the appropriate character to the Arduino
+        while userInput~='s' % Waits for the user to input the letter s to stop the actuator
+            userInput = input('Input s to stop the linear actuator\n');
+        end
+        write(arduino,'s\n',"char"); % Writes s to the Arduino
+    elseif userInput=='l' % Checks the user input
+        write(arduino,'l\n',"char"); % Writes the appropriate character to the Arduino
+        while userInput~='s' % Waits for the user to input the letter s to stop the actuator
+            userInput = input('Input s to stop the linear actuator\n');
+        end
+        write(arduino,'s\n',"char"); % Writes s to the Arduino
+    end
+end
+n = 2; % Holds the number of iterations of the loop
+% Asks the user for the inital mass of the sands and records it
+initialMass(1,1) = input('Input the first initial mass:');
+initialMass(2,1) = input('Input the second initial mass:');
+initialMass(3,1) = input('Input the third initial mass:');
+dataOne(1) = initialMass(1,1);
+dataTwo(1) = initialMass(2,1);
+dataThree(1) = initialMass(3,1);
+pause; % Wait for user input, specifically carriage return
+write(arduino,5,"uint8"); % Tells Arduino to resume program
+% Makes 6 reads from the sensors because the first 6 reads are useless
+while n<7
+    if arduino.NumBytesAvailable>0
+        dataOne(n) = readline(arduino);
+        dataTwo(n) = readline(arduino);
+        dataThree(n) = readline(arduino);
+        start(1) = readline(arduino);
+        n = n+1;
+    end
+end
+% Resets the position of the arrays and makes 5 minutes worth of reads
+n = 2;
+while n<302  
+    if arduino.NumBytesAvailable>0
+        dataOne(n) = readline(arduino);
+        dataTwo(n) = readline(arduino);
+        dataThree(n) = readline(arduino);
+        current(1) = readline(arduino);
+        time(n) = current(1) - start;
+        n = n+1;
+    end
+end
+% Makes a graphical display of the absolute and percent changes in mass for
+% each scale
+tiledlayout(3,2);
+ax1 = nexttile;
+plot(ax1,time/1000,dataOne(1,:));
+ax2 = nexttile;
+plot(ax2,time/1000,(initialMass(1,1)-dataOne(1,:))/initialMass(1,1));
+ax3 = nexttile;
+plot(ax3,time/1000,dataTwo(1,:));
+ax4 = nexttile;
+plot(ax4,time/1000,(initialMass(2,1)-dataTwo(1,:))/initialMass(2,1));
+ax5 = nexttile;
+plot(ax5,time/1000,dataThree(1,:));
+ax6 = nexttile;
+plot(ax6,time/1000,(initialMass(3,1)-dataThree(1,:))/initialMass(3,1));
+% Writes the percent changes in mass to the terminal
+fprintf('Percent change for mass one: %d\n',(initialMass(1,1)-dataOne(1,300))/initialMass(1,1));
+fprintf('Percent change for mass two: %d\n',(initialMass(2,1)-dataTwo(1,300))/initialMass(2,1));
+fprintf('Percent change for mass three: %d\n',(initialMass(3,1)-dataThree(1,300))/initialMass(3,1));
+% Writes the absolute masses and changes in mass to three different .csv
+% files
+writematrix(time,'LOITestMassOne.csv');
+writematrix(dataOne,'LOITestMassOne.csv','WriteMode','append');
+writematrix(time,'LOITestMassTwo.csv');
+writematrix(dataTwo,'LOITestMassTwo.csv','WriteMode','append');
+writematrix(time,'LOITestMassThree.csv');
+writematrix(dataThree,'LOITestMassThree.csv','WriteMode','append');
+clear arduino
