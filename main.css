@@ -2142,7 +2142,6 @@ input, select, textarea {
 		text-align: center;
 		margin: 4.5em 0 0 0;
 	}
-		
 		#footer:after {
 			content: '';
 			display: block;
@@ -2176,6 +2175,10 @@ input, select, textarea {
 		#footer .copyright {
 			margin: 0 0 9em 0;
 			font-size: 0.8em;
+		}
+
+		#footer .LI-profile-badge{
+			right-padding = 0px;
 		}
 
 /* Poptrox */
