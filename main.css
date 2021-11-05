@@ -2177,11 +2177,15 @@ input, select, textarea {
 			margin: 0 0 9em 0;
 			font-size: 0.8em;
 		}
+		#footer .container {
+ 			height: 200px;
+    			display: flex;
+ 			align-items: center;
+    			justify-content: center;
+		}
+
 		#footer .LI-profile-badge {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			width = 50%;
+    			width: 10em;
 		}
 
 /* Poptrox */
