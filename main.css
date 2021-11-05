@@ -2152,6 +2152,7 @@ input, select, textarea {
 		#footer .LI-profile-badge {
     			width: 10em;
 			right-padding: 0px;
+			left-padding: 100px;
 		}
 
 		#footer:after {
