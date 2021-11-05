@@ -2142,6 +2142,16 @@ input, select, textarea {
 		text-align: center;
 		margin: 4.5em 0 0 0;
 	}
+		#footer .container {
+ 			height: 200px;
+    			display: flex;
+ 			align-items: center;
+    			justify-content: center;
+		}
+
+		#footer .LI-profile-badge {
+    			width: 10em;
+		}
 
 		#footer:after {
 			content: '';
